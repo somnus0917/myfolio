@@ -1,1 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Cloudflare Pages can default Ruby's external encoding to US-ASCII.
+# The site contains Chinese text, and al_folio_core scans source files during
+# build, so force a UTF-8 locale before invoking Jekyll.
+export LANG=C.UTF-8
+export LC_ALL=C.UTF-8
+export RUBYOPT="${RUBYOPT:+$RUBYOPT }-EUTF-8"
+
 bundle exec jekyll build
