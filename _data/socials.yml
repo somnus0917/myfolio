@@ -7,6 +7,10 @@ rss_icon: true # comment this line to hide the RSS icon
 # wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
 # whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
 homepage:
-  logo: https://www.google.com/s2/favicons?domain=somnus.top
+  logo: fa-solid fa-house
   title: Personal Website
   url: https://somnus.top/
+blog:
+  logo: fa-solid fa-blog
+  title: Blog
+  url: https://blog.somnus.top/
