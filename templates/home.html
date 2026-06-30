@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Academic homepage</p>
+    <h1>{{ config.extra.first_name }} <span>{{ config.extra.last_name }}</span></h1>
+    <p class="subtitle">{{ section.extra.subtitle }}<br />{{ section.extra.subtitle_more }}</p>
+    <div class="link-row">
+      {% for social in config.extra.socials %}
+      <a href="{{ social.url }}">{{ social.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+  <aside class="profile-card" aria-label="Profile">
+    <img src="{{ config.extra.profile_image }}" alt="{{ config.extra.author }}" />
+    <h2>{{ section.extra.profile_name }}</h2>
+    <p>{{ section.extra.profile_affiliation }}</p>
+    <p><a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></p>
+  </aside>
+</section>
+
+<article class="prose">{{ section.content | safe }}</article>
+
+{% set projects = get_section(path="projects/_index.md") %}
+<section class="section-block">
+  <div class="section-heading">
+    <h2>Selected Projects</h2>
+    <a href="{{ get_url(path='/projects/') }}">all projects</a>
+  </div>
+  <div class="project-grid compact">
+    {% for project in projects.pages | slice(end=3) %}
+    <a class="project-card" href="{{ project.permalink }}">
+      <span>{{ project.extra.category }}</span>
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.description }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% set news = get_section(path="news/_index.md") %}
+<section class="section-block">
+  <div class="section-heading">
+    <h2>News</h2>
+    <a href="{{ get_url(path='/news/') }}">archive</a>
+  </div>
+  <ol class="timeline">
+    {% for item in news.pages | slice(end=5) %}
+    <li>
+      <time datetime="{{ item.date }}">{{ item.date | date(format="%Y-%m-%d") }}</time>
+      <span>{{ item.content | striptags | safe }}</span>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endblock content %}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ lang | default(value='en') }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="{% if page and page.description %}{{ page.description }}{% elif section and section.description %}{{ section.description }}{% else %}{{ config.description }}{% endif %}"
+    />
+    <meta name="keywords" content="{{ config.extra.keywords }}" />
+    <title>
+      {% if page and page.title %}{{ page.title }} | {% elif section and section.title %}{{ section.title }} | {% endif %}{{ config.title }}
+    </title>
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}" />
+    <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ get_url(path='atom.xml') }}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ get_url(path='/') }}">
+        <span class="brand-mark">L</span>
+        <span>{{ config.title }}</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        {% for item in config.extra.nav %}
+        <a href="{{ get_url(path=item.url) }}">{{ item.name }}</a>
+        {% endfor %}
+      </nav>
+    </header>
+
+    <main class="site-main">{% block content %}{% endblock content %}</main>
+
+    <footer class="site-footer">
+      <div class="social-row">
+        {% for social in config.extra.socials %}
+        <a href="{{ social.url }}">{{ social.name }}</a>
+        {% endfor %}
+      </div>
+      <p>Powered by <a href="https://www.getzola.org/">Zola</a>. Built with curiosity and care.</p>
+    </footer>
+  </body>
+</html>

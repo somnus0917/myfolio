@@ -1,0 +1,61 @@
+base_url = "https://blog.somnus.wiki"
+title = "Lei Chen"
+description = "Personal academic homepage of Lei Chen."
+default_language = "en"
+compile_sass = true
+build_search_index = true
+minify_html = true
+generate_feeds = true
+feed_filenames = ["atom.xml", "rss.xml"]
+
+[markdown]
+smart_punctuation = true
+
+[search]
+include_title = true
+include_description = true
+include_content = true
+
+[extra]
+author = "Lei Chen"
+first_name = "Lei"
+last_name = "Chen"
+email = "somnus0917chen@hotmail.com"
+profile_image = "/assets/img/prof_pic.jpg"
+keywords = "artificial intelligence, computer vision, stereo matching, efficient deep learning, multimodal perception, large language models, rag"
+
+[[extra.nav]]
+name = "about"
+url = "/"
+
+[[extra.nav]]
+name = "projects"
+url = "/projects/"
+
+[[extra.nav]]
+name = "news"
+url = "/news/"
+
+[[extra.nav]]
+name = "cv"
+url = "/cv/"
+
+[[extra.nav]]
+name = "repositories"
+url = "/repositories/"
+
+[[extra.socials]]
+name = "Email"
+url = "mailto:somnus0917chen@hotmail.com"
+
+[[extra.socials]]
+name = "GitHub"
+url = "https://github.com/somnus0917"
+
+[[extra.socials]]
+name = "Personal Website"
+url = "https://somnus.wiki/"
+
+[[extra.socials]]
+name = "Blog"
+url = "https://blog.somnus.wiki/"

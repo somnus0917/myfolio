@@ -27,32 +27,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "3.3.5"
-          bundler-cache: true
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
-          cache: "pip"
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "latest"
+          node-version: "20"
           cache: "npm"
-
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y imagemagick
-
-      - name: Install Python dependencies
-        run: |
-          pip3 install --upgrade nbconvert
 
       - name: Install Node.js dependencies
         run: npm ci
+
+      - name: Check Zola site
+        run: docker run --rm -v "$PWD":/site -w /site ghcr.io/getzola/zola:v0.22.1 check --skip-external-links

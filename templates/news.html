@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<header class="page-header">
+  <p class="eyebrow">Updates</p>
+  <h1>{{ section.title }}</h1>
+</header>
+
+<ol class="timeline archive">
+  {% for item in section.pages %}
+  <li>
+    <time datetime="{{ item.date }}">{{ item.date | date(format="%Y-%m-%d") }}</time>
+    <span>{{ item.content | striptags | safe }}</span>
+  </li>
+  {% endfor %}
+</ol>
+{% endblock content %}
