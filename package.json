@@ -1,6 +1,7 @@
 {
   "name": "myfolio",
   "private": true,
+  "packageManager": "pnpm@11.5.1",
   "scripts": {
     "dev": "zola serve",
     "build": "zola build",

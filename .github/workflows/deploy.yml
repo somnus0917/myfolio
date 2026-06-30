@@ -12,7 +12,7 @@ on:
       - "static/**"
       - "templates/**"
       - "package.json"
-      - "package-lock.json"
+      - "pnpm-lock.yaml"
       - ".github/workflows/deploy.yml"
   pull_request:
     branches:
@@ -25,7 +25,7 @@ on:
       - "static/**"
       - "templates/**"
       - "package.json"
-      - "package-lock.json"
+      - "pnpm-lock.yaml"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
@@ -39,17 +39,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.5.1
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
+          cache: "pnpm"
 
       - name: Install JS deps
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Check formatting
-        run: npm run lint:prettier
+        run: pnpm lint:prettier
 
       - name: Check Zola site
         run: docker run --rm -v "$PWD":/site -w /site ghcr.io/getzola/zola:v0.22.1 check --skip-external-links

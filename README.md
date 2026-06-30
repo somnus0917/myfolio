@@ -8,10 +8,10 @@ This repository contains the source for [blog.somnus.wiki](https://blog.somnus.w
 zola serve
 ```
 
-Or with the npm convenience wrapper:
+Or with the pnpm convenience wrapper:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Docker development is also available:
