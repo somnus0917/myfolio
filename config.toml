@@ -20,7 +20,7 @@ include_content = true
 author = "Lei Chen"
 first_name = "Lei"
 last_name = "Chen"
-email = "somnus0917chen@hotmail.com"
+email = "mailme@somnus.wiki"
 profile_image = "/assets/img/prof_pic.jpg"
 keywords = "artificial intelligence, computer vision, stereo matching, efficient deep learning, multimodal perception, large language models, rag"
 
@@ -46,15 +46,12 @@ url = "/repositories/"
 
 [[extra.socials]]
 name = "Email"
-url = "mailto:somnus0917chen@hotmail.com"
+url = "mailto:mailme@somnus.wiki"
 
 [[extra.socials]]
 name = "GitHub"
 url = "https://github.com/somnus0917"
 
-[[extra.socials]]
-name = "Personal Website"
-url = "https://somnus.wiki/"
 
 [[extra.socials]]
 name = "Blog"
