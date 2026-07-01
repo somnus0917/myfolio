@@ -7,7 +7,7 @@ template = "page.html"
 ## Lei Chen
 
 Incoming M.S. Student in Artificial Intelligence  
-China · [somnus0917chen@hotmail.com](mailto:somnus0917chen@hotmail.com) · [GitHub](https://github.com/somnus0917)
+China · [mailme@somnus.wiki](mailto:mailme@somnus.wiki) · [GitHub](https://github.com/somnus0917)
 
 Incoming M.S. student at UCAS / Institute of Computing Technology, interested in efficient deep learning, stereo vision, Rust, and large language models.
 
